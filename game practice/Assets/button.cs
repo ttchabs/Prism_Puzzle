@@ -22,6 +22,8 @@ public class PlayerSwitch : MonoBehaviour
 
     public GameObject StartButton;
     public GameObject StartScreen;
+
+    public GameObject PuzzleCardSelector;
    
 
    public void Swaptoplayer2()
@@ -61,6 +63,7 @@ public class PlayerSwitch : MonoBehaviour
         P1Pattern.SetActive (false);
         P2Pattern.SetActive (false);
         p2Showbutton.SetActive(false);
+        PuzzleCardSelector.SetActive(false);
 
     }
 
@@ -80,5 +83,8 @@ public class PlayerSwitch : MonoBehaviour
         StartScreen.SetActive(false);
         p1button.SetActive(true);
         p2Showbutton.SetActive(true);
+        PuzzleCardSelector.SetActive(true);
+       
+
     }
 }
