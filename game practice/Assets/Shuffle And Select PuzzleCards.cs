@@ -9,17 +9,52 @@ public class ShuffleAndSelectPuzzleCards : MonoBehaviour
     public List<GameObject> PuzzleCards; // List of card game objects
                                          //the list will be filled with the puzzle card game objects
     public Transform cardposition;
-    public GameObject Button;
-    public Vector3 size = new Vector3(1f, 1f, 0);
+    public GameObject Player1PuzzleButton;
+    public GameObject Player2PuzzleButton;
+
+    private GameObject player2puzzle;
+    private GameObject player1puzzle;
 
 
-    public void selectandchoose()
+
+
+    public void Player1PuzzleCard()
     {
-        GameObject randomgameobject = PuzzleCards[Random.Range(0, PuzzleCards.Count)];
-        Instantiate(randomgameobject, cardposition.position, Quaternion.identity);
-        Button.SetActive(false);
-        randomgameobject.transform.localScale -= new Vector3 (size.x, size.y, size.z);
+        player1puzzle = PuzzleCards[Random.Range(0, PuzzleCards.Count)];
+        Instantiate(player1puzzle, cardposition.position, Quaternion.identity); 
+        Destroy(Player1PuzzleButton.gameObject);
+       
 
     }
+    public void Player2PuzzleCard()
+    {
+        player2puzzle = PuzzleCards[Random.Range(0, PuzzleCards.Count)];
+        Instantiate(player2puzzle, cardposition.position, Quaternion.identity);
+        Destroy(Player2PuzzleButton.gameObject);
+    }
+    public void HidePuzzleCard()
+    {
+        player2puzzle.SetActive(false);
+        player1puzzle.SetActive(false);
+    }
+
+   
+
+    
+
+    public void ShowP2puzzleCard()
+    {
+        player2puzzle.SetActive(true);
+
+    }
+
+    
+
+   
+
+
+
+
+
 
 }
