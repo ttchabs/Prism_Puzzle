@@ -69,7 +69,7 @@ public class PlayerSwitch : MonoBehaviour
         Player2PatternButton.SetActive(true);
 
 
-        PatternCardsScript.HidePuzzleCard();
+
         Player2PuzzleButton.SetActive(true);
 
     }
